@@ -3,10 +3,10 @@
 
 ### Topic
 
-+ Factors affecting high school cross country race performance
-	-Location (elevation), course (difficulty), heat of location, allergens, goal setting, aggressiveness of goals, home school size, home school location
++ This is an interesting topic because many consider training hard as the best way to improve performance. My story will show other factors affecting performance.
 
-+ It is interesting to see what factors affect a great race beyond what the racer can control (training, goal setting)
++ Factors affecting high school cross country race performance
+	-Location (elevation), course (difficulty), heat of location, allergens, goal setting, aggressiveness of goals, home school size, home school location.
 
 ### Datasets
 
@@ -18,23 +18,17 @@
 	- lat/lon of race locations
 	- average temperatures (either for cross country season or temperature on race day)
 	- allergens in area (average or race day)
+	- location of schools (if XC Stats will provide)
 
 ### Visualizations
 
-+ Bar chart (male and female) winning racer time (y) over years (x)
-	- All courses and/or specific courses
-
-+ Heatmap or scattergram on a California map of 
-	- where PRs (personal records) are achieved
-	- temperature
-	- allergens (maybe)
-
-+ Additional visualizations of factors outside a racer's control
-
-	- show school size and PRs or top ten finishes
++ Visualizations of factors outside a racer's control
+	- bar chart winning race time (y) over years (x) for specific course
+	- add male vs female to above chart
+	- show school size vs top ten finishes (or school team finishes)
 	- show how average temperature (during cross country season) or elevation of home school location (training ground) affects # of top ten finishes
 
-+Visualizations of factors within a racer's control
++ Visualizations of factors within a racer's control
 	- show how goal setting affects a PR
 	- show agressiveness of goal affects a PR
 	- show how the porportion of high-effort training days two weeks (consult a coach for predicted ideal time) before a race affects a PR
