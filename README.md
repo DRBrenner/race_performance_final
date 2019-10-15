@@ -21,15 +21,15 @@
 
 ### Visualizations
 
-+Bar chart (male and female) winning racer time (y) over years (x)
++ Bar chart (male and female) winning racer time (y) over years (x)
 	-All courses and/or specific courses
 
-+Heatmap or scattergram on a California map of 
++ Heatmap or scattergram on a California map of 
 	-where PRs (personal records) are achieved
 	-temperature
 	-allergens (maybe)
 
-+Additional visualizations of factors outside a racer's control
++ Additional visualizations of factors outside a racer's control
 
 	-show school size and PRs or top ten finishes
 	-show how average temperature (during cross country season) or elevation of home school location (training ground) affects # of top ten finishes
