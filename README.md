@@ -32,3 +32,5 @@
 	- show how goal setting affects a PR
 	- show agressiveness of goal affects a PR
 	- show how the porportion of high-effort training days two weeks (consult a coach for predicted ideal time) before a race affects a PR
+
++ Dashboard inspiration: https://www.datapine.com/blog/wp-content/uploads/2018/05/customer-service-report-team.jpg
