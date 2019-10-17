@@ -14,6 +14,9 @@
 	- 577,000 rows of individual race performance statistics since 2011 including a racer id, racer school, racer gender, course id, course distance, previous course time, best course time, if a goal was set/met.
 	- 1,900,000 rows of individual training logs including a racer id, date of training, effort value, and feel value.
 
+![Results and Goals](/static/images/dataResultsGoals.png "Results and Goals Data Description")
+![Training Logs](/static/images/trainingLogs.png "Training Logs Data Description")
+
 + Possibly add the following data from outside sources
 	- lat/lon of race locations
 	- average temperatures (either for cross country season or temperature on race day)
