@@ -3,56 +3,159 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BellyButtonBacteria</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Home/Landing</title>
+  <link rel="stylesheet" href=https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/journal/bootstrap.min.css
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="../static/css/style.css">
+  <style>
+    #1 {
+      margin-top: 10mm
+    }
+  </style>
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light" background-color="#eb6864">
+    <a class="navbar-brand" href="index.html">HOME</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="comparisons.html">Comparisons<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="data.html">Data</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Plots-Latitude vs...
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="lat_v_temp.html">Temperature</a>
+            <a class="dropdown-item" href="lat_v_cloudiness.html">Cloudiness</a>
+            <a class="dropdown-item" href="lat_v_wind.html">Wind Speed</a>
+            <a class="dropdown-item" href="lat_v_humidity.html">Humidity</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center" style="background-color:lightgreen"> 
-        <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the "Select SAMPLE" dropdown below to explore the dataset</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>SELECT Sample:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)">
-          </select>
-        </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading" style="background-color:lightgreen">
-            <h3 class="panel-title" style="color:black">Sample MetaData</h3>
-          </div>
-          <div id="sample-metadata" class="panel-body">
 
-          </div>
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class="caption">
+          <h1 class="text-center">PRACTICE DOES NOT ALWAYS MAKE PERFECT!</h1>
+          <p>The purpose of this project is to determine factors beyond training hard that influence ultimate high
+            school cross country
+            race performance. I was generously provided anonymous race and training log data from XCStats (<a
+              href="www.xcstats.com"></a>)
+            from 2011 through the beginning of the 2019 cross country season.
+          </p>
         </div>
       </div>
-      <div class="col-md-5">
-        <div id="pie"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div id="bubble"></div>
-    </div>
-  </div>
 
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+      <div class="jumbotron">
+        <div class="row">
+          <div class="col-md-3">
+
+            <div class="caption">
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+    <div class="row">
+      <div class="col-md-6" id="plot1">
+
+      </div>
+      <div class="col-md-6" id="plot2">
+
+        </div>
+  
+
+    </div>
+          <div class="col-md-6">
+
+            <div class="caption text-center" id="1">
+              <h2 class="text-center">Visualizations</h2>
+              <p>Weather elements plotted versus latitude included temperature, cloudiness, wind speed, and humidity.
+              </p>
+              <p></p>
+            </div>
+          </div>
+          <div class="col-md-3">
+
+            <div class="caption">
+              <p></p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="text-center">
+              <h4>Latitude vs.<br>Temperature</h4>
+              <p></p>
+              <a href="lat_v_temp.html"><img class="img-responsive" src="../static/images/LatitudevTemp.png"
+                  alt="Lat v Temp Graph" width="240" height="180"></a>
+              <div class="btn"></div>
+              <p><a href="lat_v_temp.html" class="btn btn-primary" role="button">View Graph</a></p>
+
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="text-center">
+              <h4>Latitude vs.<br>Cloudiness</h4>
+              <p></p>
+              <a href="lat_v_cloudiness.html"><img src="../static/images/LatitudevClouds.png"
+                  alt="Lat v Cloudiness Graph" width="240" height="180"></a>
+              <div class="btn"></div>
+              <p><a href="lat_v_cloudiness.html" class="btn btn-primary" role="button">View Graph</a></p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class=" text-center">
+              <h4>Latitude vs.<br>Wind Speed</h4>
+              <p></p>
+              <a href="lat_v_wind.html"><img src="../static/images/LatitudevWind.png" alt="Lat v Wind Graph" width="240"
+                  height="180"></a>
+              <div class="btn"></div>
+              <p><a href="lat_v_wind.html" class="btn btn-primary" role="button">View Graph</a></p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class=" text-center">
+              <h4>Latitude vs.<br>Humidity</h4>
+              <p></p>
+              <a href="lat_v_humidity.html"><img src="../static/images/LatitudevHumidity.png" alt="Lat v Humidity Graph"
+                  width="240" height="180"></a>
+              <div class="btn"></div>
+              <p><a href="lat_v_humidity.html" class="btn btn-primary" role="button">View Graph</a></p>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="../static/js/app.js"></script>
 
 </body>
 
