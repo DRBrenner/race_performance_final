@@ -1,10 +1,3 @@
-console.log("anyhing")
-// function buildMetadata(sample) {
-
-// Use `d3.json` to fetch the metadata for a sample
-// Use d3 to select the panel with id of `#sample-metadata`
-
-
 d3.json(`/2018_race_results`).then((data) => {
   console.log(data)
   var courseId = [];
@@ -16,11 +9,11 @@ d3.json(`/2018_race_results`).then((data) => {
 
 
   data.forEach(function (element) {
-
     courseId.push(element.course_id)
     racersInRace.push(element.racers_in_race)
     raceId.push(element.race_id)
-    meetDate.push(element.meet_date)
+    meetDate.push(new Date(element.meet_date))
+    // meetDate.push(${new Date(element.meet_date).getFullYear()}-${new Date(element.meet_date).getMonth()}-${new Date(element.meet_date).getDate()})
     racersWithPRs.push(element.racers_w_prs)
     percentPRs.push(element.percent_prs)
   });
@@ -34,20 +27,14 @@ d3.json(`/2018_race_results`).then((data) => {
       size: percentPRs,
       sizeref: 4,
       color: "green"
-      // color: response.otu_ids,
-      // colorscale: "Rainbow"
-    }
-  };
-  console.log(courseId)
-  console.log(racersInRace)
-  console.log(racersWithPRs)
-  console.log(meetDate)
+    }};
+
   var plot1 = [trace1];
 
   var layout = {
     showlegend: false,
-    height: 500,
-    width: 500,
+    height: 400,
+    width: 400,
     yaxis: {
       title: {
         text: 'Number of Racers with PRs'
@@ -74,31 +61,52 @@ d3.json(`/all_races_winners`).then((data) => {
   var raceResult = [];
   var gender = [];
   var distance = [];
-  var grade = [];
+  var grade_number = [];
+  var goal_flag = [];
+  var goal_time = [];
 
 
   data.forEach(function (element) {
 
-    courseId.push(element.course_id)
-    meetDate.push(element.meet_date)
-    raceResult.push(element.race_result)
-    gender.push(element.gender)
-    distance.push(element.distance)
-    grade.push(element.grade)
+
+    if (meetDate < "12/31/2018") {
+    // if (element.gender == "b") {
+
+
+
+      courseId.push(element.course_id)
+      meetDate.push(new Date(element.meet_date))
+      // meetDate.push(${new Date(element.meet_date).getFullYear()}-${new Date(element.meet_date).getMonth()}-${new Date(element.meet_date).getDate()})
+      raceResult.push(element.race_result * .01) //to get seconds
+      if (element.gender == "b") {
+        gender.push(1);
+      }
+      else if (element.gender == "g") {
+        gender.push(0);
+      }
+
+      // gender.push(element.gender)
+      distance.push(element.distance)
+      grade_number.push(element.grade)
+      goal_flag.push(element.goal_flag)
+      goal_time.push(element.goal_time)
+    };
   });
 
   var trace2 = {
     x: meetDate,
     y: raceResult,
-    text: distance,
+    text: gender,
     mode: 'markers',
     marker: {
       // size: percentPRs,
       // sizeref: 4,
-      // color: "green"
       color: gender,
-      colorscale: "Rainbow"
+      colorscale: [[0, "mediumblue"], [1, "pink"]],
+      hovertext: gender
     }
+
+
   };
   console.log(meetDate)
   console.log(raceResult)
@@ -108,8 +116,8 @@ d3.json(`/all_races_winners`).then((data) => {
 
   var layout = {
     showlegend: false,
-    height: 500,
-    width: 500,
+    height: 400,
+    width: 400,
     xaxis: {
       title: {
         text: 'Meet Date'
@@ -124,13 +132,57 @@ d3.json(`/all_races_winners`).then((data) => {
         text: 'Race Result'
       }
     }
-    
+
   };
   Plotly.newPlot('plot2', plot2, layout, { responsive: true });
 });
 
+// d3.json(`/state_finals_2018`).then((data) => {
+//   console.log(data)
+//   var courseId = [];
+//   var meetDate = [];
+//   var raceResult = [];
+//   var gender = [];
+//   var grade_number = [];
+//   var pr_flag = [];
+//   var goal_flag = [];
+//   var goal_time = [];
 
 
+
+//   data.forEach(function (element) {
+
+//     courseId.push(element.course_id)
+//     meetDate.push(element.meet_date)
+//     raceResult.push(element.race_result)
+//     gender.push(element.gender)
+//     distance.push(element.distance)
+//     grade.push(element.grade)
+//     gradeNumber.push(element.grade)
+//     goalFlag.push(element.goal_flag)
+//     goalTime.push(element.goal_time)
+//   });
+
+//   var trace1 = {
+//     x: gradeNumber,
+//     y: raceResult.length,
+//     name: 'SF Zoo',
+//     type: 'bar'
+//   };
+
+//   var trace2 = {
+//     x: ['giraffes', 'orangutans', 'monkeys'],
+//     y: [12, 18, 29],
+//     name: 'LA Zoo',
+//     type: 'bar'
+//   };
+
+//   var data = [trace1, trace2];
+
+//   var layout = {barmode: 'group'};
+
+//   Plotly.newPlot('plot3', data, layout);
+// });
 
 
 
