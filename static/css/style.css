@@ -39,18 +39,23 @@
 }
 
 .navbar-light {
-  background-color: #eb6864;
+  background-color: #1f77b4;
 }
 
 .bg-red {
-  background-color: #eb6864;
+  background-color: #d62728;
 }
 
 .plots {
-  background-color: #eeeeee;
-  padding-block: 30px;
+  background-color:gainsboro;
+  /* padding: 200px; */
+  /* margin-block: 20px; */
+  margin-top: 20px;
 }
 
+.row {
+  margin-top: 20px;
+}
 .centerImage{
   position: relative;
   top: 50%;
@@ -104,11 +109,12 @@
     margin: 0 auto; 
   }
 
-  #plot1 {
+  /* #plot1 {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    align-content: center;
   }
 
   #plot2 {
@@ -117,3 +123,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  #plot3 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-block: 10px;
+
+  } */
+

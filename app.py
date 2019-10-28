@@ -87,101 +87,40 @@ def show_all_races_in_2018():
     all_races_in_2018 = pd.read_sql('select * from all_2018_races',connection)
     return (all_races_in_2018.to_json(orient="records"))
 
+@app.route("/state_finals_2018_all")
+def show_state_finals_2018_all():
+    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
+    connection = engine.connect()
+    state_finals_2018_all = pd.read_sql('select * from state_finals_2018_all',connection)
+    return (state_finals_2018_all.to_json(orient="records"))
+
+@app.route("/cvc1_meet_all")
+def show_cvc1_meet_all():
+    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
+    connection = engine.connect()
+    cvc1_meet_all = pd.read_sql('select * from cvc1_meet_all',connection)
+    return (cvc1_meet_all.to_json(orient="records"))
+
 @app.route("/all_races_winners")
 def show_all_races_winners():
     engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
     connection = engine.connect()
     all_races_winners = pd.read_sql('select * from all_races_winners',connection)
-    return (all_races_winners.to_json(orient="records"))
+    return (all_races_winners.to_json(orient="records"))  
 
-# NEED TO UNCOMMENT AND ADD JS/HTML PORTION
-# @app.route("/state_finals_2018_female")
-# def show_state_finals_2018_female():
+@app.route("/grade_levels_at_state")
+def show_grade_levels_at_states():
+    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
+    connection = engine.connect()
+    grade_levels_at_state = pd.read_sql('select * from grade_levels_at_state',connection)
+    return (grade_levels_at_state.to_json(orient="records"))
+
+# @app.route("/time")
+# def show_all_races_winners():
 #     engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
 #     connection = engine.connect()
-#     state_finals_2018_female = pd.read_sql('select * from state_finals_2018_female',connection)
-#     return (state_finals_2018_female.to_json(orient="records"))
-
-
-    # meet_date = [results_df[2] for result_df in results_df]
-
-
-
-    # trace = {
-    #     "x": results_df.meet_date,
-    #     "y": results_df.race_result,
-    #     "type":"line"
-    # }
-    # print(meet_date.head())
-    # return jsonify(results)
-
-# @app.route("/api/pals")
-# def pals():
-#     results = db.session.query(Pet.type, func.count(Pet.type)).group_by(Pet.type).all()
-#     print("results",results)
-
-#     pet_type = [result[0] for result in results]
-#     age = [result[1] for result in results]
-
-#     trace = {
-#         "x": pet_type,
-#         "y": age,
-#         "type": "bar"
-#     }
-#     #return results()
-#     return jsonify(trace), jsonify(trace2), 
-
-# @app.route("/metadata/<sample>")
-# def sample_metadata(sample):
-#     """Return the MetaData for a given sample."""
-#     sel = [
-#         Samples_Metadata.sample,
-#         Samples_Metadata.ETHNICITY,
-#         Samples_Metadata.GENDER,
-#         Samples_Metadata.AGE,
-#         Samples_Metadata.LOCATION,
-#         Samples_Metadata.BBTYPE,
-#         Samples_Metadata.WFREQ,
-#     ]
-
-#     results = db.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
-
-#     # Create a dictionary entry for each row of metadata information
-#     sample_metadata = {}
-#     for result in results:
-#         sample_metadata["sample"] = result[0]
-#         sample_metadata["ETHNICITY"] = result[1]
-#         sample_metadata["GENDER"] = result[2]
-#         sample_metadata["AGE"] = result[3]
-#         sample_metadata["LOCATION"] = result[4]
-#         sample_metadata["BBTYPE"] = result[5]
-#         sample_metadata["WFREQ"] = result[6]
-
-#     print(sample_metadata)
-#     return jsonify(sample_metadata)
-
-
-# @app.route("/samples/<sample>")
-# def samples(sample):
-#     """Return `otu_ids`, `otu_labels`,and `sample_values`."""
-#     stmt = db.session.query(Samples).statement
-#     df = pd.read_sql_query(stmt, db.session.bind)
-
-#     # Filter the data based on the sample number and
-#     # only keep rows with values above 1
-#     sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
-
-#     # Sort by sample
-#     sample_data.sort_values(by=sample, ascending=False, inplace=True)
-
-#     # Format the data to send as json
-#     data = {
-#         "otu_ids": sample_data.otu_id.values.tolist(),
-#         "sample_values": sample_data[sample].values.tolist(),
-#         "otu_labels": sample_data.otu_label.tolist(),
-#     }
-#     return jsonify(data)
-
+#     all_races_winners = pd.read_sql('select * from all_races_winners',connection)
+#     return (all_races_winners.to_json(orient="records"))  
 
 if __name__ == "__main__":
     app.run(debug=True)
