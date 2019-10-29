@@ -217,7 +217,8 @@ d3.json(`/all_races_winners`).then((data) => {
     marker: {
       // size: runner_count,
       // sizeref: 12,
-      color: "#1f77b4"
+      color: "#1f77b4",
+      opacity: .75
     }
   };
 
@@ -230,14 +231,15 @@ d3.json(`/all_races_winners`).then((data) => {
     marker: {
       // size: runner_count,
       // sizeref: 12,
-      color: "#d62728"
+      color: "#d62728",
+      opacity: .5
     }
   };
 
   var plot3 = [males, females];
 
   var layout = {
-    title: 'Speed Increasing Over Time<br>All 3 mile XC Race Winners between 2011 - 2018',
+    title: 'Effects of Time on Speed<br>All 3 mile XC Race Winners between 2011 - 2018',
     showlegend: true,
     legend: {
       x: .85,
