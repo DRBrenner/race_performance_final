@@ -56,6 +56,13 @@ def index():
     return render_template("index.html")
     # return("Hello!")
 
+@app.route("/data")
+def data():
+    return render_template("data.html")
+
+@app.route("/log")
+def log():
+    return render_template("log.html")    
 
 @app.route("/results")
 def results():
