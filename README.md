@@ -1,5 +1,10 @@
-# Project 2 - Race Performance
+# Final Project - Race Performance
 ---
+### Intent
+
++ Determine how much race day variables factors influence race performance improvement (temp, number of racers, gender, etc.) 
++ Find correlations between individual seasonal race improvements and training log information.
++ Get the results in a format coaches and XCStat staff can view interactively without host costs (Tableau, Amazon AWS?).
 
 ### Topic
 
