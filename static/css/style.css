@@ -63,7 +63,7 @@
   transform: translate(-50%, -50%);
 
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
   width: 550px;
   height: 450px;
 }
@@ -75,7 +75,7 @@
   transform: translate(-50%, -50%);
 
   padding-top: 10px;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
   width: 80%;
 }
 

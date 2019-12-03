@@ -175,10 +175,10 @@ d3.json(`/state_finals_2018_all`).then((data) => {
 });
 
 // PLOT3 - ALL RACE WINNERS OVER TIME
-d3.json(`/all_races_winners`).then((data) => {
-  var meetDate = [];
-  var meetDateb = [];
-  var meetDateg = [];
+d3.json(`/all_races_winners_averages`).then((data) => {
+  var year = [];
+  var yearb = [];
+  var yearg = [];
   var raceResult = [];
   var gender = [];
   var genderb = [];
@@ -191,16 +191,16 @@ d3.json(`/all_races_winners`).then((data) => {
 
   data.forEach(function (element) {
 
-    meetDate.push(new Date(element.meet_date))
+    year.push(new Date(element.year))
     raceResult.push(element.race_result * .01) //to get seconds
     if (element.gender == "b") {
       genderb.push(1);
-      meetDateb.push(new Date(element.meet_date));
+      yearb.push(new Date(element.year));
       paceb.push(element.pace);
     }
     else if (element.gender == "g") {
       genderg.push(0);
-      meetDateg.push(new Date(element.meet_date));
+      yearg.push(new Date(element.year));
       paceg.push(element.pace);
     }
     gender.push(element.gender)
@@ -210,10 +210,10 @@ d3.json(`/all_races_winners`).then((data) => {
   });
   
   var males = {
-    x: meetDateb,
+    x: yearb,
     y: paceb,
     name: "Males",
-    mode: 'markers',
+    mode: 'lines+markers',
     marker: {
       // size: runner_count,
       // sizeref: 12,
@@ -223,11 +223,11 @@ d3.json(`/all_races_winners`).then((data) => {
   };
 
   var females = {
-    x: meetDateg,
+    x: yearg,
     y: paceg,
     name: "Females",
     text: genderg,
-    mode: 'markers',
+    mode: 'lines+markers',
     marker: {
       // size: runner_count,
       // sizeref: 12,
@@ -249,7 +249,7 @@ d3.json(`/all_races_winners`).then((data) => {
     // width: 1100,
     xaxis: {
       title: {
-        text: 'Meet Date'
+        text: 'Year'
         // font: {
         //   family: 'Courier New, monospace',
         //   size: 14,

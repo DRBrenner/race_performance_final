@@ -108,12 +108,12 @@ def show_cvc1_meet_all():
     cvc1_meet_all = pd.read_sql('select * from cvc1_meet_all',connection)
     return (cvc1_meet_all.to_json(orient="records"))
 
-@app.route("/all_races_winners")
+@app.route("/all_races_winners_averages")
 def show_all_races_winners():
     engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
     connection = engine.connect()
-    all_races_winners = pd.read_sql('select * from all_races_winners',connection)
-    return (all_races_winners.to_json(orient="records"))  
+    all_races_winners_averages = pd.read_sql('select * from all_races_winners_averages',connection)
+    return (all_races_winners_averages.to_json(orient="records"))  
 
 @app.route("/grade_levels_at_state")
 def show_grade_levels_at_states():
