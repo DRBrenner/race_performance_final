@@ -62,7 +62,11 @@ def data():
 
 @app.route("/log")
 def log():
-    return render_template("log.html")    
+    return render_template("log.html")
+
+@app.route("/tableau")
+def tableau():
+    return render_template("tableau.html")            
 
 @app.route("/results")
 def results():
@@ -87,38 +91,34 @@ def results():
     # print(results[meet_date])  
     return jsonify(list(results))
 
+engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
+connection = engine.connect()
+
 @app.route("/2018_race_results")
 def show_all_races_in_2018():
-    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
-    connection = engine.connect()
+
     all_races_in_2018 = pd.read_sql('select * from all_2018_races',connection)
     return (all_races_in_2018.to_json(orient="records"))
 
 @app.route("/state_finals_2018_all")
 def show_state_finals_2018_all():
-    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
-    connection = engine.connect()
+
     state_finals_2018_all = pd.read_sql('select * from state_finals_2018_all',connection)
     return (state_finals_2018_all.to_json(orient="records"))
 
 @app.route("/cvc1_meet_all")
 def show_cvc1_meet_all():
-    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
-    connection = engine.connect()
+
     cvc1_meet_all = pd.read_sql('select * from cvc1_meet_all',connection)
     return (cvc1_meet_all.to_json(orient="records"))
 
 @app.route("/all_races_winners_averages")
 def show_all_races_winners():
-    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
-    connection = engine.connect()
     all_races_winners_averages = pd.read_sql('select * from all_races_winners_averages',connection)
     return (all_races_winners_averages.to_json(orient="records"))  
 
 @app.route("/grade_levels_at_state")
 def show_grade_levels_at_states():
-    engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
-    connection = engine.connect()
     grade_levels_at_state = pd.read_sql('select * from grade_levels_at_state',connection)
     return (grade_levels_at_state.to_json(orient="records"))
 

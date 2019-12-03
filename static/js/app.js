@@ -195,13 +195,14 @@ d3.json(`/all_races_winners_averages`).then((data) => {
     raceResult.push(element.race_result * .01) //to get seconds
     if (element.gender == "b") {
       genderb.push(1);
-      yearb.push(new Date(element.year));
+      yearb.push(element.year);
       paceb.push(element.pace);
     }
     else if (element.gender == "g") {
       genderg.push(0);
-      yearg.push(new Date(element.year));
+      yearg.push(element.year);
       paceg.push(element.pace);
+      console.log(yearg);
     }
     gender.push(element.gender)
     pace.push(element.pace)
