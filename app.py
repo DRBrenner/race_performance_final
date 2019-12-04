@@ -18,8 +18,8 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-
-app.config["SQLALCHEMY_DATABASE_URI"] = f'postgresql://postgres:{password}@localhost:5432/runner_data'
+connection_string = 'postgresql://postgres:postgres@runnerdb.cybj3uhy36x0.us-east-2.rds.amazonaws.com:5432'
+app.config["SQLALCHEMY_DATABASE_URI"] = connection_string
 db = SQLAlchemy(app)
 
 # @app.before_first_request
@@ -91,7 +91,8 @@ def results():
     # print(results[meet_date])  
     return jsonify(list(results))
 
-engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
+# engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
+engine = create_engine(connection_string)
 connection = engine.connect()
 
 @app.route("/2018_race_results")
@@ -119,6 +120,7 @@ def show_all_races_winners():
 
 @app.route("/grade_levels_at_state")
 def show_grade_levels_at_states():
+
     grade_levels_at_state = pd.read_sql('select * from grade_levels_at_state',connection)
     return (grade_levels_at_state.to_json(orient="records"))
 
