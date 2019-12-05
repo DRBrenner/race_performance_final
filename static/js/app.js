@@ -1,22 +1,3 @@
-var granimInstance = new Granim({
-  element: '#canvas-image-blending',
-  direction: 'top-bottom',
-  isPausedWhenNotInView: true,
-  image: {
-    source: '../static/images/bg-forest.jpg',
-    blendingMode: 'soft-light'
-  },
-  states: {
-    "default-state": {
-      gradients: [
-        ['#29323c', '#485563'],
-        ['#FF6B6B', '#556270'],
-        ['#80d3fe', '#7ea0c4']
-      ],
-      transitionSpeed: 4000
-    }
-  }
-});
 
 d3.json(`/2018_race_results`).then((data) => {
   console.log(data)
@@ -240,7 +221,7 @@ d3.json(`/all_races_winners_averages`).then((data) => {
   var plot3 = [males, females];
 
   var layout = {
-    title: 'Effects of Time on Speed<br>All 3 mile XC Race Winners between 2011 - 2018',
+    title: 'Effects of Time on Pace<br>Average Pace (seconds) of all XC Race Winners between 2011 - 2018',
     showlegend: true,
     legend: {
       x: .85,

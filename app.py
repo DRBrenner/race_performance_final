@@ -66,7 +66,23 @@ def log():
 
 @app.route("/tableau")
 def tableau():
-    return render_template("tableau.html")            
+    return render_template("tableau.html")      
+
+@app.route("/importances")
+def importances():
+    return render_template("importances.html")        
+
+@app.route("/tableau_runners")
+def tableau_runners():
+    return render_template("tableau_runners.html")  
+
+@app.route("/tableau_races")
+def tableau_races():
+    return render_template("tableau_races.html")  
+
+@app.route("/goals")
+def goals():
+    return render_template("goals.html")  
 
 @app.route("/results")
 def results():
