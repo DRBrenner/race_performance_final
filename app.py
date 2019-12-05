@@ -110,33 +110,33 @@ def results():
 engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
 connection = engine.connect()
 
-@app.route("/2018_race_results")
-def show_all_races_in_2018():
+# @app.route("/2018_race_results")
+# def show_all_races_in_2018():
 
-    all_races_in_2018 = pd.read_sql('select * from all_2018_races',connection)
-    return (all_races_in_2018.to_json(orient="records"))
+#     all_races_in_2018 = pd.read_sql('select * from all_2018_races',connection)
+#     return (all_races_in_2018.to_json(orient="records"))
 
-@app.route("/state_finals_2018_all")
-def show_state_finals_2018_all():
+# @app.route("/state_finals_2018_all")
+# def show_state_finals_2018_all():
 
-    state_finals_2018_all = pd.read_sql('select * from state_finals_2018_all',connection)
-    return (state_finals_2018_all.to_json(orient="records"))
+#     state_finals_2018_all = pd.read_sql('select * from state_finals_2018_all',connection)
+#     return (state_finals_2018_all.to_json(orient="records"))
 
-@app.route("/cvc1_meet_all")
-def show_cvc1_meet_all():
+# @app.route("/cvc1_meet_all")
+# def show_cvc1_meet_all():
 
-    cvc1_meet_all = pd.read_sql('select * from cvc1_meet_all',connection)
-    return (cvc1_meet_all.to_json(orient="records"))
+#     cvc1_meet_all = pd.read_sql('select * from cvc1_meet_all',connection)
+#     return (cvc1_meet_all.to_json(orient="records"))
 
 @app.route("/all_races_winners_averages")
 def show_all_races_winners():
     all_races_winners_averages = pd.read_sql('select * from all_races_winners_averages',connection)
     return (all_races_winners_averages.to_json(orient="records"))  
 
-@app.route("/grade_levels_at_state")
-def show_grade_levels_at_states():
-    grade_levels_at_state = pd.read_sql('select * from grade_levels_at_state',connection)
-    return (grade_levels_at_state.to_json(orient="records"))
+# @app.route("/grade_levels_at_state")
+# def show_grade_levels_at_states():
+#     grade_levels_at_state = pd.read_sql('select * from grade_levels_at_state',connection)
+#     return (grade_levels_at_state.to_json(orient="records"))
 
 # @app.route("/time")
 # def show_all_races_winners():
