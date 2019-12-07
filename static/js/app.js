@@ -208,7 +208,7 @@ d3.json(`/all_races_winners_averages`).then((data) => {
     x: yearg,
     y: paceg,
     name: "Females",
-    text: genderg,
+    // text: genderg,
     mode: 'lines+markers',
     marker: {
       // size: runner_count,
@@ -221,13 +221,13 @@ d3.json(`/all_races_winners_averages`).then((data) => {
   var plot3 = [males, females];
 
   var layout = {
-    title: 'Effects of Time on Pace<br>Average Pace (seconds) of all XC Race Winners between 2011 - 2018',
+    title: 'Effects of Time and Gender on Pace<br>(averaged pace of all race winners per year)',
     showlegend: true,
     legend: {
       x: .85,
-      y: 1
+      y: 1.3
     },
-    // height: 400,
+    height: 350,
     // width: 1100,
     xaxis: {
       title: {
@@ -239,7 +239,7 @@ d3.json(`/all_races_winners_averages`).then((data) => {
       }
     },
     yaxis: {
-      range: [4, 16],
+      range: [5, 9],
       title: {
         text: 'Pace (minutes/mile)'
       }
@@ -339,7 +339,7 @@ var layout = {
   }
 };
 
-Plotly.newPlot('plot4', data, layout);
+Plotly.newPlot('plot4', data, layout, { responsive: true });
 
 var data = [
   {

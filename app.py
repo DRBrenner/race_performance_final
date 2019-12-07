@@ -54,7 +54,10 @@ Base.prepare(db.engine, reflect=True)
 def index():
     """Return the homepage."""
     return render_template("index.html")
-    # return("Hello!")
+
+@app.route("/architecture")
+def architecture():
+    return render_template("architecture.html")
 
 @app.route("/data")
 def data():
@@ -72,9 +75,13 @@ def tableau():
 def importances():
     return render_template("importances.html")        
 
-@app.route("/tableau_runners")
-def tableau_runners():
-    return render_template("tableau_runners.html")  
+@app.route("/logs_and_effort")
+def logs_and_effort():
+    return render_template("logs_and_effort.html")  
+
+@app.route("/team_and_race_size")
+def team_and_race_size():
+    return render_template("team_and_race_size.html")  
 
 @app.route("/tableau_races")
 def tableau_races():
@@ -83,6 +90,10 @@ def tableau_races():
 @app.route("/goals")
 def goals():
     return render_template("goals.html")  
+
+@app.route("/time")
+def time():
+    return render_template("time.html")  
 
 @app.route("/results")
 def results():
@@ -110,6 +121,11 @@ def results():
 engine = create_engine(f'postgresql://postgres:{password}@localhost:5432/runner_data')
 connection = engine.connect()
 
+@app.route("/all_races_winners_averages")
+def show_all_races_winners():
+    all_races_winners_averages = pd.read_sql('select * from all_races_winners_averages',connection)
+    return (all_races_winners_averages.to_json(orient="records"))  
+
 # @app.route("/2018_race_results")
 # def show_all_races_in_2018():
 
@@ -127,11 +143,6 @@ connection = engine.connect()
 
 #     cvc1_meet_all = pd.read_sql('select * from cvc1_meet_all',connection)
 #     return (cvc1_meet_all.to_json(orient="records"))
-
-@app.route("/all_races_winners_averages")
-def show_all_races_winners():
-    all_races_winners_averages = pd.read_sql('select * from all_races_winners_averages',connection)
-    return (all_races_winners_averages.to_json(orient="records"))  
 
 # @app.route("/grade_levels_at_state")
 # def show_grade_levels_at_states():
