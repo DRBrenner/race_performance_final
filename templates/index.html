@@ -29,12 +29,27 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            DATA DESCRIPTIONS
+            GRAPHICAL ANALYSIS
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/tableau">Tableau Data Analysis</a>
-            <a class="dropdown-item" href="/data">Race Results Data</a>
-            <a class="dropdown-item" href="/log">Training Log Data</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/time">Time/Gender</a>
+            <a class="dropdown-item" href="/team_and_race_size">Racer Information</a>
+            <a class="dropdown-item" href="/goals">Setting Goals</a>
+            <a class="dropdown-item" href="/logs_and_effort">Training</a>
+            <a class="dropdown-item" href="/tableau">More Data Analysis</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            LEARNING TOOLS & DATA
+          </a>
+          LEARNING TOOLS & DATA
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/architecture">Architecture</a>
+          <a class="dropdown-item" href="/data">Metadata</a>
+          <a class="dropdown-item" href="/importances">Importances</a>
           </div>
         </li>
       </ul>
@@ -43,86 +58,54 @@
 
   <div class="container" style="background-color: gainsboro">
 
+    <div class="col-md-12" style="background-color: gainsboro">
+      <div class="caption">
+        <h1 class="text-center">CROSS COUNTRY RACING<br>DOES PRACTICE MAKE PERFECT?</h1>
+      </div>
+    </div>
     <div class="row" style="background-color: gainsboro">
+      <div class="col-md-4" style="background-color: gainsboro"></div>
       <div class="col-md-4" style="background-color: gainsboro">
-
-
         <canvas id="canvas-image-blending" width="500" height="200"></canvas>
       </div>
-      <div class="col-md-8" style="background-color: gainsboro">
-        <div class="caption">
-          <h1 class="text-center">CROSS COUNTRY RACING<br>PRACTICE MAKES PERFECT?</h1>
-          <p>The purpose of this project is to determine factors beyond training hard that influence high
-            school cross country race performance. This dashboard shows racers have very little control of their fate.
-          </p>
+      <div class="col-md-4" style="background-color: gainsboro"></div>
+    </div>
+    <div class="row" style="background-color: gainsboro"></div>
+    <div class="col-md-12" style="background-color: gainsboro">
+      <div class="caption">
+        <h3 class="text-center">LET'S FIND OUT!</h3>
+        <p class="text-center">This website shows eight years of high school cross country race data analysis of
+          63,789 runners from 314 schools running 1,211 courses in 9033 races and nearly two million training logs.
+          Select items from the GRAPHICAL ANALYSIS drop-down menu above to see many factors beyond training hard that
+          influence race performance. Select Metadata from the LEARNING TOOLS & DATA drop-down menu to see more
+          information about the data generously provided by <a href="https://www.xcstats.com/" target="_blank">XCStats
+          </a>.
+        </p>
 
-        </div>
       </div>
     </div>
-    <!-- <div class="jumbotron">
-        <div class="row">
-          <div class="col-md-3">
 
-            <div class="caption">
-              <p></p>
-              <p></p>
-              <p></p>
-            </div>
-          </div> -->
-    <div class="row">
-      <div class="col-md-12" id="plot3">
-        <a href="time.html"></a>
-      </div>
+<!-- Pagination Next/previous page -->
+    <div class='d-flex'>
+      <ul class='pagination mx-auto'>
+        <!-- <li class="page-item"><a class="page-link text-center" style=color:gray href="/time">Previous</a></li> -->
+        <li class="page-item"><a class="page-link text-center" style=color:gray href="/time">Next</a></li>
+      </ul>
     </div>
-    <div class="row">
-      <div class="col-md-8 plots" id="plot2"></div>
-      <div class="col-md-4 plots" id="plot6"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 plots" id="plot1"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 plots" id="plot5"></div>
-      <div class="col-md-6 plots" id="plot4"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 plots" id="plot7"></div>
-      <div class="col-md-6 plots" id="plot8"></div>
-    </div>
-    <div class="row"></div>
-  </div>
 
-  <div class='tableauPlaceholder' id='viz1574789896770' style='position: relative'><noscript><a href='#'><img alt=' '
-          src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_15733301312770&#47;Story1&#47;1_rss.png'
-          style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
-      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-      <param name='embed_code_version' value='3' />
-      <param name='site_root' value='' />
-      <param name='name' value='CitiBike_15733301312770&#47;Story1' />
-      <param name='tabs' value='no' />
-      <param name='toolbar' value='no' />
-      <param name='static_image'
-        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBike_15733301312770&#47;Story1&#47;1.png' />
-      <param name='animate_transition' value='yes' />
-      <param name='display_static_image' value='yes' />
-      <param name='display_spinner' value='yes' />
-      <param name='display_overlay' value='yes' />
-      <param name='display_count' value='yes' /></object></div>
-  <script
-    type='text/javascript'>                    var divElement = document.getElementById('viz1574789896770'); var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width = '100%'; vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="../static/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    <script src="../static/js/granim.js"></script>
 
 </body>
 

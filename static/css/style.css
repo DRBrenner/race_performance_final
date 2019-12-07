@@ -109,6 +109,8 @@
     margin: 0 auto; 
   }
 
+  .pagination {text-align: center;}
+
   /* #plot1 {
     position: relative;
     top: 50%;
