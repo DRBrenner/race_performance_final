@@ -248,7 +248,7 @@ d3.json(`/all_races_winners_averages`).then((data) => {
   Plotly.newPlot('plot3', plot3, layout, { responsive: true });
 });
 
-var xRunners = ['League Meet', 'Winning Racers', 'State Qualifiers'];
+var xRunners = ['League Meet', 'Winning Racers', '2018 State Qualifiers'];
 var yTotal = [186, 5931, 622];
 var yPRs = [31, 1364, 254];
 var yGoalsSet = [2, 235, 10];
